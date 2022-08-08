@@ -8,7 +8,7 @@ class CreateEmployeeComponent extends Component {
         super(props)
 
         this.state = {
-            //step 2
+            
             id: this.props.match.params.id,
             firstName: "",
             lastName:"",
@@ -19,7 +19,6 @@ class CreateEmployeeComponent extends Component {
         this.saveOrUpdateEmployee = this.saveOrUpdateEmployee.bind(this);
         this.cancel = this.cancel.bind(this);
     }
-    //step 3
     componentDidMount(){
 
         //step 4
@@ -41,8 +40,7 @@ class CreateEmployeeComponent extends Component {
         e.preventDefault();
         let employee = {firstName: this.state.firstName, lastName: this.state.lastName, emailId: this.state.emailId};
         console.log("employee => " + JSON.stringify(employee));
-        
-        // step 5
+  
         if(this.state.id === '_add' ){ 
             EmployeeService.createEmployee(employee, this.state.id).then( res => {
             history.push("/employees");
