@@ -20,8 +20,6 @@ class CreateEmployeeComponent extends Component {
         this.cancel = this.cancel.bind(this);
     }
     componentDidMount(){
-
-        //step 4
         if(this.state.id === '_add' ){
             return
         }
